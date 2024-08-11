@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    test 2
+
+    <input type="file" id="excelFileInput">
+
+    <script>
+
+        let variable = "HELLO THere!" +(25 * 4);
+        let m = 2 + 5;
+
+        console.log(variable);
+        console.log(m);
+
+        let a = [5,8,9];
+        console.log(a);
+
+        let aa = a.toSpliced(2);
+        console.log(aa);
+        console.log(a);
+
+        console.log("push");
+
+        aa.push(30);
+        console.log(aa);
+
+        let p = aa.pop();
+        console.log(aa);
+        console.log(p);
+
+        pp = aa.pop();
+        console.log(pp);
+
+        console.log("length = ", aa.length);
+
+        a = [10,9,8,7,6,5,4,3,2,1];
+        console.log(a);
+
+        let f = (v,v2) => {
+            console.log("test ", v/v2);
+        }
+
+        f(344,0);
+
+        let fa = (aa) => {
+            console.log(aa);
+        }
+        fa(p);
+
+        ( (s) => {
+            console.log(s);
+        } ) (777);
+
+        let c = (v) => console.log("element ", v*2);
+
+        a.forEach(c);
+
+        a.forEach((v) => {console.log("anonymous", v*3)});
+
+        let b = a.filter((v) => {return v > 7;});
+        console.log(b);
+
+        let o = {
+            hello: "hi",
+            bye: "adiou",
+            fff: (u) => console.log("HEYYYY", u*u)
+        };
+
+        console.log(o.bye);
+
+        o.fff(77);
+        a[7]
+
+        console.log(o);
+
+        console.log(a);
+
+        if (o.length) 
+        
+        document.getElementById('excelFileInput').addEventListener('change', handleFileUpload);
+
+        async function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                await readExcelFile(file);
+            }
+        }
+
+        async function readExcelFile(file) {
+            const workbook = new ExcelJS.Workbook();
+            const new_wb= new ExcelJS.Workbook(); 
+            const new_sheet = new_wb.addWorksheet('Workers');
+            
+            await workbook.xlsx.load(file);
+
+            document.getElementById('output').innerHTML = output;
+        };
+        
+    </script>
+</body>
+</html>
